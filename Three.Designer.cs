@@ -154,7 +154,7 @@
             this.all.Name = "all";
             this.all.Size = new System.Drawing.Size(177, 41);
             this.all.TabIndex = 18;
-            this.all.Text = "All";
+            this.all.Text = "All at once";
             this.all.UseVisualStyleBackColor = false;
             this.all.Click += new System.EventHandler(this.all_Click);
             // 

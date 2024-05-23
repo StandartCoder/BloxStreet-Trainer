@@ -123,7 +123,7 @@
             this.prev.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.prev.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prev.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.prev.Location = new System.Drawing.Point(592, 142);
+            this.prev.Location = new System.Drawing.Point(592, 197);
             this.prev.Name = "prev";
             this.prev.Size = new System.Drawing.Size(201, 49);
             this.prev.TabIndex = 14;
@@ -139,7 +139,7 @@
             this.send.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.send.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.send.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.send.Location = new System.Drawing.Point(592, 197);
+            this.send.Location = new System.Drawing.Point(592, 142);
             this.send.Name = "send";
             this.send.Size = new System.Drawing.Size(201, 49);
             this.send.TabIndex = 15;

@@ -12,7 +12,7 @@ namespace BloxStreet_Trainer
 {
     internal class Config
     {
-        public static string version = "0.8.4";
+        public static string version = "0.9.7";
         public static string username = "";
         
         // check if newst version is installed

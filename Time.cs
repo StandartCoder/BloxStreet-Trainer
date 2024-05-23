@@ -180,7 +180,7 @@ namespace BloxStreet_Trainer
 
             TimeSpan timeDifference = closestTime.Value - now;
 
-            if (timeDifference.Minutes == 15 && timeDifference.Hours == 0 && timeDifference.Seconds == 0)
+            if (timeDifference.Minutes < 15 && timeDifference.Hours == 0)
             {
                 join.Visible = true;
             }
