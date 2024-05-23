@@ -297,7 +297,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Training";
-            this.Text = "BloxStreet Trainer <Coded by StandartCoder>";
+            this.Text = "BloxStreet Trainer";
             this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -34,6 +34,7 @@
             this.title = new System.Windows.Forms.Label();
             this.backbtn = new System.Windows.Forms.Button();
             this.timepanel = new System.Windows.Forms.Panel();
+            this.join = new System.Windows.Forms.Label();
             this.times = new System.Windows.Forms.ListBox();
             this.seconds = new System.Windows.Forms.Label();
             this.minutes = new System.Windows.Forms.Label();
@@ -44,7 +45,6 @@
             this.made = new System.Windows.Forms.Label();
             this.logo = new System.Windows.Forms.PictureBox();
             this.version = new System.Windows.Forms.Label();
-            this.join = new System.Windows.Forms.Label();
             this.timepanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
@@ -102,6 +102,18 @@
             this.timepanel.Name = "timepanel";
             this.timepanel.Size = new System.Drawing.Size(776, 197);
             this.timepanel.TabIndex = 12;
+            // 
+            // join
+            // 
+            this.join.AutoSize = true;
+            this.join.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.join.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.join.Location = new System.Drawing.Point(15, 156);
+            this.join.Name = "join";
+            this.join.Size = new System.Drawing.Size(118, 32);
+            this.join.TabIndex = 5;
+            this.join.Text = "Joinable!";
+            this.join.Visible = false;
             // 
             // times
             // 
@@ -205,7 +217,7 @@
             // 
             // logo
             // 
-            this.logo.Image = global::BloxStreet_Trainer.Properties.Resources.Png;
+            this.logo.Image = global::BloxStreet_Trainer.Properties.Resources.logo;
             this.logo.Location = new System.Drawing.Point(0, 55);
             this.logo.Name = "logo";
             this.logo.Size = new System.Drawing.Size(70, 70);
@@ -225,18 +237,6 @@
             this.version.Text = "Version: 0.8.2";
             this.version.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // join
-            // 
-            this.join.AutoSize = true;
-            this.join.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.join.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.join.Location = new System.Drawing.Point(15, 156);
-            this.join.Name = "join";
-            this.join.Size = new System.Drawing.Size(118, 32);
-            this.join.TabIndex = 5;
-            this.join.Text = "Joinable!";
-            this.join.Visible = false;
-            // 
             // Time
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -254,7 +254,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Time";
-            this.Text = "BloxStreet Trainer <Coded by StandartCoder>";
+            this.Text = "BloxStreet Trainer";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.Time_Load);
             this.timepanel.ResumeLayout(false);

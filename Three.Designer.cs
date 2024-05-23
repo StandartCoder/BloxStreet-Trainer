@@ -160,7 +160,7 @@
             // 
             // logo
             // 
-            this.logo.Image = global::BloxStreet_Trainer.Properties.Resources.Png;
+            this.logo.Image = global::BloxStreet_Trainer.Properties.Resources.logo;
             this.logo.Location = new System.Drawing.Point(0, 55);
             this.logo.Name = "logo";
             this.logo.Size = new System.Drawing.Size(70, 70);
@@ -199,7 +199,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Three";
-            this.Text = "BloxStreet Trainer <Coded by StandartCoder>";
+            this.Text = "BloxStreet Trainer";
             this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
