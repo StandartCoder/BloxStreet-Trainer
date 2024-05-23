@@ -27,7 +27,7 @@ namespace BloxStreet_Trainer
             if (newst_version != version)
             {
                 MessageBox.Show("This version is outdated... Click OK to open download page.");
-                System.Diagnostics.Process.Start("https://github.com/StandartCoder/BloxStreet-Trainer/releases");
+                System.Diagnostics.Process.Start("https://github.com/StandartCoder/BloxStreet-Trainer/releases/tag/latest");
                 Application.Exit();
                 Environment.Exit(0);
             }
