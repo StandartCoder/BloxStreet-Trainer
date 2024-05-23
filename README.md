@@ -12,17 +12,23 @@ I acknowledge that the code for this tool is not of the highest quality. It was 
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
+- [FAQ](#faq)
 
 ## Installation
 To install and run the BloxStreet Trainer Helper, follow these steps:
 
+### Using Precompiled Version
+1. Download the latest release from the [Releases](https://github.com/StandartCoder/BloxStreet-Trainer-Helper/releases) page.
+2. Run the executable to start the application.
+
+### Building from Source
 1. Clone the repository:
     ```sh
-    git clone https://github.com/StandartCoder/BloxStreet-Trainer-Helper.git
+    git clone https://github.com/StandartCoder/BloxStreet-Trainer.git
     ```
 2. Navigate to the project directory:
     ```sh
-    cd BloxStreet-Trainer-Helper
+    cd BloxStreet-Trainer
     ```
 3. Build and run the project using your preferred IDE or the .NET CLI:
     ```sh
@@ -32,11 +38,6 @@ To install and run the BloxStreet Trainer Helper, follow these steps:
 
 ## Usage
 Once you have the BloxStreet Trainer Helper up and running, you can use it to streamline your training sessions. The tool provides a user-friendly interface to manage and execute training tasks with ease.
-
-### Steps:
-1. Open the application.
-2. Select the training task you want to perform.
-3. Follow the on-screen instructions to complete the task with a few clicks.
 
 ## Features
 - Simplified training process
@@ -69,6 +70,19 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 For any inquiries, suggestions, or feedback, feel free to contact me on Discord. You can DM me or ping me in the Discord server.
+
+## FAQ
+### What does this program do?
+BloxStreet Trainer Helper is a tool designed to simplify the training process at BloxStreet Corporation by automating repetitive tasks. This tool allows you to manage training sessions with just a few clicks, reducing the need for manual copy-pasting.
+
+### How do I install the program?
+You can install the program by downloading the precompiled version from the [Releases](https://github.com/StandartCoder/BloxStreet-Trainer-Helper/releases) page or by building it from source following the [Installation](#installation) instructions.
+
+### What should I do if I encounter a bug or issue?
+Please report any bugs or issues by creating an issue on the GitHub repository. Alternatively, you can DM me on Discord or ping me in the Discord server for immediate assistance.
+
+### Can I contribute to the project?
+Yes, contributions are welcome! Check out the [Contributing](#contributing) section for guidelines on how to contribute to the project.
 
 ---
 
