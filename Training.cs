@@ -43,10 +43,10 @@ namespace BloxStreet_Trainer
             send.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, send.Width, send.Height, 20, 20));
             failed.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, failed.Width, failed.Height, 20, 20));
             soon.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, soon.Width, soon.Height, 20, 20));
-            cafe.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, cafe.Width, cafe.Height, 20, 20));
+            soon2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, soon2.Width, soon2.Height, 20, 20));
 
             soon.Enabled = false;
-            soon.ForeColor = Color.WhiteSmoke;
+            soon2.Enabled = false;
 
             phase.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, phase.Width, phase.Height, 20, 20));
             left.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, left.Width, left.Height, 20, 20));
@@ -135,24 +135,17 @@ namespace BloxStreet_Trainer
 
         private void send_Click(object sender, EventArgs e)
         {
-            Roblox.Chat(text.Text);
+            if (Program.settings.user.Text == "" || Program.settings.user.Text == "Username")
+            {
+                MessageBox.Show("Please enter a username first in 3 Lines.");
+                return;
+            }   
+            Roblox.Chat((text.Text).Replace("{username}", Program.settings.user.Text));
         }
 
         private void failed_Click(object sender, EventArgs e)
         {
             Roblox.Chat(Data.failed);
-        }
-
-        private void cafe_Click(object sender, EventArgs e)
-        {
-            Random random = new Random();
-            int index = random.Next(Data.cafe_test_requests.Count);
-            Roblox.Chat(Data.cafe_test_requests[index]);
-        }
-
-        void update_status()
-        {
-            status.Text = "Status: " + current_index + " / " + 10;
         }
 
         void update()

@@ -35,7 +35,9 @@
             this.threebtn = new System.Windows.Forms.Button();
             this.trainbtn = new System.Windows.Forms.Button();
             this.made = new System.Windows.Forms.Label();
+            this.setbtn = new System.Windows.Forms.Button();
             this.logo = new System.Windows.Forms.PictureBox();
+            this.version = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,6 +125,22 @@
             this.made.Text = "Made with ♥ by StandartC0der";
             this.made.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // setbtn
+            // 
+            this.setbtn.BackColor = System.Drawing.Color.DimGray;
+            this.setbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.setbtn.FlatAppearance.BorderSize = 0;
+            this.setbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.setbtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.setbtn.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.setbtn.Location = new System.Drawing.Point(132, 327);
+            this.setbtn.Name = "setbtn";
+            this.setbtn.Size = new System.Drawing.Size(135, 57);
+            this.setbtn.TabIndex = 7;
+            this.setbtn.Text = "Settings";
+            this.setbtn.UseVisualStyleBackColor = false;
+            this.setbtn.Click += new System.EventHandler(this.setbtn_Click);
+            // 
             // logo
             // 
             this.logo.Image = global::BloxStreet_Trainer.Properties.Resources.Png;
@@ -133,12 +151,26 @@
             this.logo.TabIndex = 0;
             this.logo.TabStop = false;
             // 
+            // version
+            // 
+            this.version.AutoSize = true;
+            this.version.BackColor = System.Drawing.Color.Transparent;
+            this.version.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.version.Location = new System.Drawing.Point(706, 18);
+            this.version.Name = "version";
+            this.version.Size = new System.Drawing.Size(95, 20);
+            this.version.TabIndex = 8;
+            this.version.Text = "Version: 0.8.2";
+            this.version.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.version);
+            this.Controls.Add(this.setbtn);
             this.Controls.Add(this.made);
             this.Controls.Add(this.trainbtn);
             this.Controls.Add(this.threebtn);
@@ -167,6 +199,8 @@
         private System.Windows.Forms.Button threebtn;
         private System.Windows.Forms.Button trainbtn;
         private System.Windows.Forms.Label made;
+        private System.Windows.Forms.Button setbtn;
+        public System.Windows.Forms.Label version;
     }
 }
 

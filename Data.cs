@@ -12,14 +12,14 @@ namespace BloxStreet_Trainer
 
         public static List<string> three_green_lines = new List<string>
         {
-            "Greetings, everyone! Thank you for attending this training session. My name is StandartCoder, and it is my pleasure to be your trainer.",
+            "Greetings, everyone! Thank you for attending this training session. My name is {username}, and it is my pleasure to be your trainer.",
             "While working at the cafe, you are responsible for taking the customer's order and ensuring its prompt fulfillment.",
             "Congratulations, you have all passed the Cafe Test! Please sign out of your cafe registers by clicking the exit button."
         };
 
         public static List<string> introduction_script = new List<string>
         {
-            "Greetings, everyone! Thank you for attending this training session. My name is StandartCoder, and it is my pleasure to be your trainer.",
+            "Greetings, everyone! Thank you for attending this training session. My name is {username}, and it is my pleasure to be your trainer.",
             "In case you need to go AFK for any reason, be sure to inform me. Failure to do so will result in a removal from the server.",
             "Please be aware that you are allowed to go AFK for a maximum of two minutes. You may not go AFK for a duration exceeding this time.",
             "During this training session, you are permitted to go AFK up to two times.",
@@ -31,7 +31,7 @@ namespace BloxStreet_Trainer
         {
             "We will now begin with the Cafe Test.",
             "When a customer approaches your cafe register at the store, it is essential to greet them with a polite and friendly greeting.",
-            "Here is an example of a greeting: “Hello! Welcome to BloxStreet Corporation! I'm (username), and I'm here to assist you. How may I help you today?”",
+            "Here is an example of a greeting: “Hello! Welcome to BloxStreet Corporation! I'm {username}, and I'm here to assist you. How may I help you today?”",
             "Make sure to include the term \"BloxStreet\" in your greeting.",
             "While working at the cafe, you are responsible for taking the customer's order and ensuring its prompt fulfillment.",
             "Feel free to utilize the !notepad command to record the customer's order.",
@@ -43,17 +43,8 @@ namespace BloxStreet_Trainer
             "Afterward, kindly prompt the customer to scan their BloxStreet Cash Card on the payment screen. Once the payment is made, wish the guest an enjoyable rest of their day.",
             "We will begin this test shortly. You must utilize comprehensible grammar, and I will assess your understandability.",
             "Please be aware that I can only repeat the order twice. If you give me an incorrect item, you will fail this training automatically.",
-            "I will now approach each of you individually. When I do, make sure to greet me with your greeting."
-        };
-
-        public static List<string> cafe_test_requests = new List<string>
-        {
-            "Greetings! May I please have a Cherry Slushie and a Regular Coffee?",
-            "Greetings! May I please have a Cherry Slushie and a Decaf Coffee?",
-            "Greetings! May I please have a Raspberry Slushie and a Decaf Coffee?",
-            "Greetings! May I please have a Raspberry Slushie and a Regular Coffee?",
-            "Greetings! May I please have a Raspberry Slushie, Decaf Coffee and a Regular Coffee?",
-            "Greetings! May I please have a Raspberry Slushie, Cherry Slushie, Decaf Coffee and a Regular Coffee?"
+            "I will now approach each of you individually. When I do, make sure to greet me with your greeting.",
+            "Greetings! May I please have a Cherry Slushie and a Regular Coffee?"
         };
 
         public static List<string> register_test_script = new List<string>

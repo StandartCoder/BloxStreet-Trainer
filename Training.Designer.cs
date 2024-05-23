@@ -38,12 +38,13 @@
             this.send = new System.Windows.Forms.Button();
             this.failed = new System.Windows.Forms.Button();
             this.soon = new System.Windows.Forms.Button();
-            this.cafe = new System.Windows.Forms.Button();
             this.phase = new System.Windows.Forms.Label();
             this.status = new System.Windows.Forms.Label();
             this.left = new System.Windows.Forms.Button();
             this.right = new System.Windows.Forms.Button();
             this.made = new System.Windows.Forms.Label();
+            this.soon2 = new System.Windows.Forms.Button();
+            this.version = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // menu_title
@@ -177,22 +178,6 @@
             this.soon.Text = "Coming Soon...";
             this.soon.UseVisualStyleBackColor = false;
             // 
-            // cafe
-            // 
-            this.cafe.BackColor = System.Drawing.Color.DimGray;
-            this.cafe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.cafe.FlatAppearance.BorderSize = 0;
-            this.cafe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cafe.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cafe.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.cafe.Location = new System.Drawing.Point(592, 362);
-            this.cafe.Name = "cafe";
-            this.cafe.Size = new System.Drawing.Size(201, 49);
-            this.cafe.TabIndex = 18;
-            this.cafe.Text = "Cafe Orders (Random)";
-            this.cafe.UseVisualStyleBackColor = false;
-            this.cafe.Click += new System.EventHandler(this.cafe_Click);
-            // 
             // phase
             // 
             this.phase.BackColor = System.Drawing.Color.DimGray;
@@ -259,17 +244,45 @@
             this.made.Text = "Made with ♥ by StandartC0der";
             this.made.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // soon2
+            // 
+            this.soon2.BackColor = System.Drawing.Color.DimGray;
+            this.soon2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.soon2.FlatAppearance.BorderSize = 0;
+            this.soon2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.soon2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.soon2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.soon2.Location = new System.Drawing.Point(592, 362);
+            this.soon2.Name = "soon2";
+            this.soon2.Size = new System.Drawing.Size(201, 49);
+            this.soon2.TabIndex = 24;
+            this.soon2.Text = "Coming Soon...";
+            this.soon2.UseVisualStyleBackColor = false;
+            // 
+            // version
+            // 
+            this.version.AutoSize = true;
+            this.version.BackColor = System.Drawing.Color.Transparent;
+            this.version.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.version.Location = new System.Drawing.Point(706, 18);
+            this.version.Name = "version";
+            this.version.Size = new System.Drawing.Size(95, 20);
+            this.version.TabIndex = 25;
+            this.version.Text = "Version: 0.8.2";
+            this.version.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Training
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.version);
+            this.Controls.Add(this.soon2);
             this.Controls.Add(this.made);
             this.Controls.Add(this.right);
             this.Controls.Add(this.left);
             this.Controls.Add(this.status);
             this.Controls.Add(this.phase);
-            this.Controls.Add(this.cafe);
             this.Controls.Add(this.soon);
             this.Controls.Add(this.failed);
             this.Controls.Add(this.send);
@@ -300,11 +313,12 @@
         private System.Windows.Forms.Button send;
         private System.Windows.Forms.Button failed;
         private System.Windows.Forms.Button soon;
-        private System.Windows.Forms.Button cafe;
         private System.Windows.Forms.Label phase;
         private System.Windows.Forms.Label status;
         private System.Windows.Forms.Button left;
         private System.Windows.Forms.Button right;
         private System.Windows.Forms.Label made;
+        private System.Windows.Forms.Button soon2;
+        public System.Windows.Forms.Label version;
     }
 }

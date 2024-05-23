@@ -8,14 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
-using System.Threading;
-using System.Management.Instrumentation;
 
 namespace BloxStreet_Trainer
 {
-    public partial class Three : Form
+    public partial class Settings : Form
     {
-        public Three()
+        public Settings()
         {
             InitializeComponent();
             this.Paint += new PaintEventHandler(set_background);
@@ -37,15 +35,8 @@ namespace BloxStreet_Trainer
             menu_title.Location = new Point(this.Width / 2 - menu_title.Width / 2, menu_title.Location.Y);
 
             backbtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, backbtn.Width, backbtn.Height, 20, 20));
-            btn1.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn1.Width, btn1.Height, 20, 20));
-            btn2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn2.Width, btn2.Height, 20, 20));
-            btn3.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn3.Width, btn3.Height, 20, 20));
-
-            all.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, all.Width, all.Height, 20, 20));
-
-            btn1.Text = Data.three_green_lines[0];
-            btn2.Text = Data.three_green_lines[1];
-            btn3.Text = Data.three_green_lines[2];
+            user.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, user.Width, user.Height, 20, 20));
+            lines.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, lines.Width, lines.Height, 20, 20));
         }
 
         [System.Runtime.InteropServices.DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -74,6 +65,36 @@ namespace BloxStreet_Trainer
 
         private void backbtn_Click(object sender, EventArgs e)
         {
+            if (Config.getUsername() != user.Text && !Config.changeUsername(user.Text))
+            {
+                MessageBox.Show("Couldn't change the username in config. Please try again, if continues ping/dm StandartCoder in discord.");
+            }
+
+            string[] phases = { "introduction", "cafe_test", "register_test", "passing_lrs" };
+            foreach (string phase in phases)
+            {
+                List<string> lines = Config.getLines(phase);
+                
+                if (phase == "introduction")
+                {
+                    Data.introduction_script = lines;
+                }
+                else if (phase == "cafe_test")
+                {
+                    Data.cafe_test_script = lines;
+                }
+                else if (phase == "register_test")
+                {
+                    Data.register_test_script = lines;
+                }
+                else if (phase == "passing_lrs")
+                {
+                    Data.passing_lrs_script = lines;
+                }
+            }
+
+            Program.training = new Training();
+
             Program.home.Show();
             Program.home.Location = this.Location;
             this.Hide();
@@ -84,43 +105,10 @@ namespace BloxStreet_Trainer
             Application.Exit();
         }
 
-        private void btn1_Click(object sender, EventArgs e)
+        private void lines_Click(object sender, EventArgs e)
         {
-            if (Program.settings.user.Text == "" || Program.settings.user.Text == "Username")
-            {
-                MessageBox.Show("Please enter a username first.");
-                return;
-            }
-
-            Roblox.Chat(Data.three_green_lines[0].Replace("{username}", Program.settings.user.Text));
-        }
-
-        private void btn2_Click(object sender, EventArgs e)
-        {
-            Roblox.Chat(Data.three_green_lines[1]);
-        }
-
-        private void btn3_Click(object sender, EventArgs e)
-        {
-            Roblox.Chat(Data.three_green_lines[2]);
-        }
-
-        private void all_Click(object sender, EventArgs e)
-        {
-            if (Program.settings.user.Text == "" || Program.settings.user.Text == "Username")
-            {
-                MessageBox.Show("Please enter a username first.");
-                return;
-            }
-
-            List<string> green_lines = new List<string>
-            {
-                Data.three_green_lines[0].Replace("{username}", Program.settings.user.Text),
-                Data.three_green_lines[1],
-                Data.three_green_lines[2]
-            };
-
-            Roblox.ChatMany(green_lines);
+            // open explorer to the folder
+            System.Diagnostics.Process.Start("explorer.exe", Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\BloxStreet\\lines");
         }
     }
 }

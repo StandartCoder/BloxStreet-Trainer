@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -32,22 +33,17 @@ namespace BloxStreet_Trainer
 
         private const int SW_RESTORE = 9;
         private const int KEYEVENTF_KEYUP = 0x0002;
-        
+
         const byte VK_RETURN = 0x0D;
 
-        public static void Chat(String message)
-        {
-            Type(message);
-            SendCharacter((char)VK_RETURN);
-        }
-
-        public static void Type(String message)
+        public static void Focus()
         {
             string robloxWindowTitle = "Roblox";
 
             Process[] processes = Process.GetProcessesByName("RobloxPlayerBeta");
             if (processes.Length == 0)
             {
+                Console.WriteLine("Roblox process not found.");
                 return;
             }
 
@@ -63,6 +59,7 @@ namespace BloxStreet_Trainer
 
             if (robloxProcess == null)
             {
+                Console.WriteLine("Roblox window not found.");
                 return;
             }
 
@@ -70,8 +67,81 @@ namespace BloxStreet_Trainer
             ShowWindow(hWnd, SW_RESTORE);
             BringWindowToTop(hWnd);
             SetForegroundWindow(hWnd);
+            Thread.Sleep(200); // Added delay to ensure the window is focused
+        }
+
+        public static void focusBack()
+        {
+            SetForegroundWindow(Process.GetCurrentProcess().MainWindowHandle);
+            Thread.Sleep(200); // Added delay to ensure the focus is returned
+        }
+
+        public static void OldChat(String message)
+        {
+            Type(message);
+            SendCharacter((char)VK_RETURN);
+            focusBack();
+        }
+
+        public static void Chat(String message)
+        {
+            try
+            {
+                Focus();
+                Clipboard.SetText(message);
+                Thread.Sleep(100); // Ensure clipboard has enough time to set text
+
+                SendCharacter('o');
+                Thread.Sleep(100); // Small delay before sending paste command
+                SendKeys.SendWait("^v");
+                Thread.Sleep(100); // Ensure paste operation is complete
+                SendCharacter((char)VK_RETURN);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in Chat: " + ex.Message);
+            }
+            finally
+            {
+                focusBack();
+            }
+        }
+
+        public static void ChatMany(List<string> messages)
+        {
+            try
+            {
+                Focus();
+
+                foreach (var message in messages)
+                {
+                    Clipboard.SetText(message);
+                    Thread.Sleep(100); // Ensure clipboard has enough time to set text
+
+                    SendCharacter('o');
+                    Thread.Sleep(100); // Small delay before sending paste command
+                    SendKeys.SendWait("^v");
+                    Thread.Sleep(100); // Ensure paste operation is complete
+                    SendCharacter((char)VK_RETURN);
+                    Thread.Sleep(200); // Delay between messages
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in ChatMany: " + ex.Message);
+            }
+            finally
+            {
+                focusBack();
+            }
+        }
+
+        public static void Type(String message)
+        {
+            Focus();
 
             SendCharacter('o');
+            Thread.Sleep(100); // Ensure the 'o' character is sent
             SendKeys.SendWait(message);
         }
 
@@ -83,7 +153,7 @@ namespace BloxStreet_Trainer
             keybd_event(vk, scanCode, 0, GetMessageExtraInfo());
             keybd_event(vk, scanCode, KEYEVENTF_KEYUP, GetMessageExtraInfo());
 
-            Thread.Sleep(50);
+            Thread.Sleep(50); // Delay to ensure the key event is processed
         }
     }
 }

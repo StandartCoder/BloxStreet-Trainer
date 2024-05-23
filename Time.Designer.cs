@@ -33,7 +33,6 @@
             this.menu_title = new System.Windows.Forms.Label();
             this.title = new System.Windows.Forms.Label();
             this.backbtn = new System.Windows.Forms.Button();
-            this.logo = new System.Windows.Forms.PictureBox();
             this.timepanel = new System.Windows.Forms.Panel();
             this.times = new System.Windows.Forms.ListBox();
             this.seconds = new System.Windows.Forms.Label();
@@ -43,8 +42,10 @@
             this.switchbtn = new System.Windows.Forms.Button();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.made = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
+            this.logo = new System.Windows.Forms.PictureBox();
+            this.version = new System.Windows.Forms.Label();
             this.timepanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
             // menu_title
@@ -86,16 +87,6 @@
             this.backbtn.Text = "Back";
             this.backbtn.UseVisualStyleBackColor = false;
             this.backbtn.Click += new System.EventHandler(this.backbtn_Click);
-            // 
-            // logo
-            // 
-            this.logo.Image = global::BloxStreet_Trainer.Properties.Resources.Png;
-            this.logo.Location = new System.Drawing.Point(0, 55);
-            this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(70, 70);
-            this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.logo.TabIndex = 7;
-            this.logo.TabStop = false;
             // 
             // timepanel
             // 
@@ -210,11 +201,34 @@
             this.made.Text = "Made with ♥ by StandartC0der";
             this.made.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // logo
+            // 
+            this.logo.Image = global::BloxStreet_Trainer.Properties.Resources.Png;
+            this.logo.Location = new System.Drawing.Point(0, 55);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(70, 70);
+            this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.logo.TabIndex = 7;
+            this.logo.TabStop = false;
+            // 
+            // version
+            // 
+            this.version.AutoSize = true;
+            this.version.BackColor = System.Drawing.Color.Transparent;
+            this.version.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.version.Location = new System.Drawing.Point(706, 18);
+            this.version.Name = "version";
+            this.version.Size = new System.Drawing.Size(95, 20);
+            this.version.TabIndex = 15;
+            this.version.Text = "Version: 0.8.2";
+            this.version.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Time
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.version);
             this.Controls.Add(this.made);
             this.Controls.Add(this.switchbtn);
             this.Controls.Add(this.timepanel);
@@ -229,9 +243,9 @@
             this.Text = "BloxStreet Trainer <Coded by StandartCoder>";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.Time_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.timepanel.ResumeLayout(false);
             this.timepanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,5 +265,6 @@
         private System.Windows.Forms.ListBox times;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Label made;
+        public System.Windows.Forms.Label version;
     }
 }

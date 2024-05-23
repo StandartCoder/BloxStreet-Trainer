@@ -38,11 +38,13 @@ namespace BloxStreet_Trainer
             timebtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, timebtn.Width, timebtn.Height, 20, 20));
             threebtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, threebtn.Width, threebtn.Height, 20, 20));
             trainbtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, trainbtn.Width, trainbtn.Height, 20, 20));
+            setbtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, setbtn.Width, setbtn.Height, 20, 20));
 
             // move buttons to center
             timebtn.Location = new Point((this.Width / 2 - 5) - timebtn.Width, timebtn.Location.Y);
             threebtn.Location = new Point((this.Width / 2 + 5) - threebtn.Width + timebtn.Width, threebtn.Location.Y);
-            trainbtn.Location = new Point(this.Width / 2 - trainbtn.Width / 2, trainbtn.Location.Y);
+            trainbtn.Location = new Point((this.Width / 2 - 5) - trainbtn.Width, trainbtn.Location.Y);
+            setbtn.Location = new Point((this.Width / 2 + 5) - setbtn.Width + trainbtn.Width, setbtn.Location.Y);
         }
 
         [System.Runtime.InteropServices.DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -92,6 +94,13 @@ namespace BloxStreet_Trainer
         {
             Program.training.Show();
             Program.training.Location = this.Location;
+            this.Hide();
+        }
+
+        private void setbtn_Click(object sender, EventArgs e)
+        {
+            Program.settings.Show();
+            Program.settings.Location = this.Location;
             this.Hide();
         }
     }
