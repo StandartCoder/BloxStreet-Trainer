@@ -88,7 +88,7 @@ namespace BloxStreet_Trainer
         {
             if (Program.settings.user.Text == "" || Program.settings.user.Text == "Username")
             {
-                MessageBox.Show("Please enter a username first.");
+                MessageBox.Show("Please enter a username first in Settings.");
                 return;
             }
 
@@ -109,7 +109,7 @@ namespace BloxStreet_Trainer
         {
             if (Program.settings.user.Text == "" || Program.settings.user.Text == "Username")
             {
-                MessageBox.Show("Please enter a username first.");
+                MessageBox.Show("Please enter a username first in Settings.");
                 return;
             }
 

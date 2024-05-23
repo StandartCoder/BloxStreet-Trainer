@@ -44,6 +44,7 @@
             this.made = new System.Windows.Forms.Label();
             this.logo = new System.Windows.Forms.PictureBox();
             this.version = new System.Windows.Forms.Label();
+            this.join = new System.Windows.Forms.Label();
             this.timepanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
@@ -91,6 +92,7 @@
             // timepanel
             // 
             this.timepanel.BackColor = System.Drawing.Color.DimGray;
+            this.timepanel.Controls.Add(this.join);
             this.timepanel.Controls.Add(this.times);
             this.timepanel.Controls.Add(this.seconds);
             this.timepanel.Controls.Add(this.minutes);
@@ -223,6 +225,18 @@
             this.version.Text = "Version: 0.8.2";
             this.version.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // join
+            // 
+            this.join.AutoSize = true;
+            this.join.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.join.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.join.Location = new System.Drawing.Point(15, 156);
+            this.join.Name = "join";
+            this.join.Size = new System.Drawing.Size(118, 32);
+            this.join.TabIndex = 5;
+            this.join.Text = "Joinable!";
+            this.join.Visible = false;
+            // 
             // Time
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -266,5 +280,6 @@
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Label made;
         public System.Windows.Forms.Label version;
+        private System.Windows.Forms.Label join;
     }
 }

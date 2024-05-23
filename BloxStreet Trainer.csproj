@@ -84,6 +84,12 @@
     <Compile Include="Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Small.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Small.Designer.cs">
+      <DependentUpon>Small.cs</DependentUpon>
+    </Compile>
     <Compile Include="Training.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Small.resx">
+      <DependentUpon>Small.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Training.resx">
       <DependentUpon>Training.cs</DependentUpon>

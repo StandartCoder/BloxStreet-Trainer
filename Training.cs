@@ -43,10 +43,10 @@ namespace BloxStreet_Trainer
             send.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, send.Width, send.Height, 20, 20));
             failed.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, failed.Width, failed.Height, 20, 20));
             soon.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, soon.Width, soon.Height, 20, 20));
-            soon2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, soon2.Width, soon2.Height, 20, 20));
+            small.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, small.Width, small.Height, 20, 20));
 
             soon.Enabled = false;
-            soon2.Enabled = false;
+            //small.Enabled = false;
 
             phase.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, phase.Width, phase.Height, 20, 20));
             left.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, left.Width, left.Height, 20, 20));
@@ -137,9 +137,12 @@ namespace BloxStreet_Trainer
         {
             if (Program.settings.user.Text == "" || Program.settings.user.Text == "Username")
             {
-                MessageBox.Show("Please enter a username first in 3 Lines.");
+                MessageBox.Show("Please enter a username first in Settings.");
                 return;
             }   
+
+            text.ForeColor = Color.LightGreen;
+
             Roblox.Chat((text.Text).Replace("{username}", Program.settings.user.Text));
         }
 
@@ -150,8 +153,54 @@ namespace BloxStreet_Trainer
 
         void update()
         {
+            text.ForeColor = Color.White;
+
+            if (current_index != scripts[current_phase].Count - 1)
+            {
+                next.Enabled = true;
+            }
+            else
+            {
+                next.Enabled = false;
+            }
+
+           if (current_index != 0)
+            {
+                prev.Enabled = true;
+            }
+            else
+            {
+                prev.Enabled = false;
+            }
+
+           if (current_phase == 0)
+            {
+                left.Enabled = false;
+                right.Enabled = true;
+            }
+            else if (current_phase == phases.Length - 1)
+            {
+                left.Enabled = true;
+                right.Enabled = false;
+            }
+            else
+            {
+                left.Enabled = true;
+                right.Enabled = true;
+            }
+
             List<string> script = scripts[current_phase];
             text.Text = script[current_index];
+        }
+
+        private void small_Click(object sender, EventArgs e)
+        {
+            Small small = new Small();
+            small.Show();
+            
+            small.Location = this.Location;
+
+            this.Hide();
         }
     }
 }

@@ -43,7 +43,7 @@
             this.left = new System.Windows.Forms.Button();
             this.right = new System.Windows.Forms.Button();
             this.made = new System.Windows.Forms.Label();
-            this.soon2 = new System.Windows.Forms.Button();
+            this.small = new System.Windows.Forms.Button();
             this.version = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -244,20 +244,21 @@
             this.made.Text = "Made with ♥ by StandartC0der";
             this.made.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // soon2
+            // small
             // 
-            this.soon2.BackColor = System.Drawing.Color.DimGray;
-            this.soon2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.soon2.FlatAppearance.BorderSize = 0;
-            this.soon2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.soon2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.soon2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.soon2.Location = new System.Drawing.Point(592, 362);
-            this.soon2.Name = "soon2";
-            this.soon2.Size = new System.Drawing.Size(201, 49);
-            this.soon2.TabIndex = 24;
-            this.soon2.Text = "Coming Soon...";
-            this.soon2.UseVisualStyleBackColor = false;
+            this.small.BackColor = System.Drawing.Color.DimGray;
+            this.small.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.small.FlatAppearance.BorderSize = 0;
+            this.small.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.small.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.small.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.small.Location = new System.Drawing.Point(592, 362);
+            this.small.Name = "small";
+            this.small.Size = new System.Drawing.Size(201, 49);
+            this.small.TabIndex = 24;
+            this.small.Text = "Small Mode (Soon)";
+            this.small.UseVisualStyleBackColor = false;
+            this.small.Click += new System.EventHandler(this.small_Click);
             // 
             // version
             // 
@@ -277,7 +278,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.version);
-            this.Controls.Add(this.soon2);
+            this.Controls.Add(this.small);
             this.Controls.Add(this.made);
             this.Controls.Add(this.right);
             this.Controls.Add(this.left);
@@ -318,7 +319,7 @@
         private System.Windows.Forms.Button left;
         private System.Windows.Forms.Button right;
         private System.Windows.Forms.Label made;
-        private System.Windows.Forms.Button soon2;
+        private System.Windows.Forms.Button small;
         public System.Windows.Forms.Label version;
     }
 }

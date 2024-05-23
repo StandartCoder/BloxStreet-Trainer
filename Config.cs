@@ -12,7 +12,7 @@ namespace BloxStreet_Trainer
 {
     internal class Config
     {
-        public static string version = "0.8.2";
+        public static string version = "0.8.4";
         public static string username = "";
         
         // check if newst version is installed
@@ -21,7 +21,8 @@ namespace BloxStreet_Trainer
         {
             // do http request to get newst version
             System.Net.WebClient wc = new System.Net.WebClient();
-            string newst_version = wc.DownloadString("https://pastebin.com/raw/rcjSEQ6g");
+            wc.CachePolicy = new System.Net.Cache.RequestCachePolicy(System.Net.Cache.RequestCacheLevel.NoCacheNoStore);
+            string newst_version = wc.DownloadString("https://pastebin.com/raw/rcjSEQ6g").Trim();
 
             if (newst_version != version)
             {

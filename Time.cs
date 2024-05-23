@@ -13,7 +13,27 @@ namespace BloxStreet_Trainer
 {
     public partial class Time : Form
     {
-        bool timeconverted = false;
+        int time_index = 0;
+        string[] long_timezone_names = { "Eastern Standard Time", "Central European Standard Time", "Central European Standard Time", "GMT Standard Time" }; // Updated to correct BST
+        string[] timezones_names = { "EST (Standard)", "CEST/CET", "CET (24hr)", "BST" };
+        string[] timezones = { "EST", "CET", "CET 24hr", "BST" };
+
+        TimeSpan[] est_times = new[]
+        {
+            new TimeSpan(2, 0, 0),
+            new TimeSpan(6, 0, 0),
+            new TimeSpan(10, 0, 0),
+            new TimeSpan(12, 0, 0),
+            new TimeSpan(14, 0, 0),
+            new TimeSpan(16, 0, 0),
+            new TimeSpan(19, 0, 0),
+            new TimeSpan(21, 0, 0),
+            new TimeSpan(23, 0, 0)
+        };
+
+        string[] est_times_with_labels = {
+            "02 AM (Weekend)", "06 AM (Weekend)", "10 AM", "12 PM", "02 PM", "04 PM", "07 PM", "09 PM", "11 PM"
+        };
 
         public Time()
         {
@@ -21,14 +41,14 @@ namespace BloxStreet_Trainer
             this.Paint += new PaintEventHandler(set_background);
             this.FormClosed += new FormClosedEventHandler(MyClosedHandler);
 
-            // move logo in center
+            // Move logo in center
             this.Cursor = Cursors.WaitCursor;
             this.Cursor = Cursors.Default;
 
-            // move logo in middle
+            // Move logo in middle
             logo.Location = new Point(this.Width / 2 - logo.Width / 2, logo.Location.Y);
 
-            // round corners for logo
+            // Round corners for logo
             System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
             gp.AddEllipse(0, 0, logo.Width - 3, logo.Height - 3);
             logo.Region = new Region(gp);
@@ -40,6 +60,8 @@ namespace BloxStreet_Trainer
             switchbtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, switchbtn.Width, switchbtn.Height, 20, 20));
             times.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, times.Width, times.Height, 20, 20));
             timepanel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, timepanel.Width, timepanel.Height, 20, 20));
+
+            switchbtn.Text = timezones_names[time_index];
 
             timer.Start();
             doIt();
@@ -59,13 +81,13 @@ namespace BloxStreet_Trainer
         {
             Graphics graphics = e.Graphics;
 
-            //the rectangle, the same size as our Form
+            // The rectangle, the same size as our Form
             Rectangle gradient_rectangle = new Rectangle(0, 0, Width, Height);
 
-            //define gradient's properties
+            // Define gradient's properties
             Brush b = new LinearGradientBrush(gradient_rectangle, Color.FromArgb(210, 210, 210), Color.FromArgb(228, 217, 251), 65f);
 
-            //apply gradient         
+            // Apply gradient         
             graphics.FillRectangle(b, gradient_rectangle);
         }
 
@@ -78,42 +100,48 @@ namespace BloxStreet_Trainer
 
         private void switchbtn_Click(object sender, EventArgs e)
         {
-            if (timeconverted == false)
+            // Change timezone
+            if (time_index == timezones.Length - 1)
             {
-                switchbtn.Text = "EST to CET";
-
-                times.Items.Clear();
-
-                times.Items.Add("08:00 (Weekend)");
-                times.Items.Add("12:00 (Weekend)");
-                times.Items.Add("16:00");
-                times.Items.Add("18:00");
-                times.Items.Add("20:00");
-                times.Items.Add("22:00");
-                times.Items.Add("01:00");
-                times.Items.Add("03:00");
-                times.Items.Add("05:00");
-
-                timeconverted = true;
+                time_index = 0;
             }
             else
             {
-                switchbtn.Text = "No Convert";
-
-                times.Items.Clear();
-
-                times.Items.Add("2 AM (Weekend)");
-                times.Items.Add("6 AM (Weekend)");
-                times.Items.Add("10 AM");
-                times.Items.Add("12 PM");
-                times.Items.Add("2 PM");
-                times.Items.Add("4 PM");
-                times.Items.Add("7 PM");
-                times.Items.Add("9 PM");
-                times.Items.Add("11 PM");
-
-                timeconverted = false;
+                time_index++;
             }
+
+            switchbtn.Text = timezones_names[time_index];
+
+            times.Items.Clear();
+
+            TimeZoneInfo convertedTimezone = TimeZoneInfo.FindSystemTimeZoneById(long_timezone_names[time_index]);
+            for (int i = 0; i < est_times.Length; i++)
+            {
+                var time = est_times[i];
+                DateTime estTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, time.Hours, time.Minutes, time.Seconds, DateTimeKind.Unspecified);
+                DateTime convertedTime = TimeZoneInfo.ConvertTime(estTime, TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time"), convertedTimezone);
+
+                if (timezones[time_index] == "CET 24hr")
+                {
+                    string label = (i == 0 || i == 1) ? " (Weekend)" : "";
+                    times.Items.Add(convertedTime.ToString("HH:mm") + label);
+                }
+                else
+                {
+                    string label = est_times_with_labels[i];
+                    times.Items.Add(convertedTime.ToString("hh:mm tt") + " " + label.Substring(label.IndexOf(' ')));
+                }
+            }
+        }
+
+        private DateTime ConvertTime(DateTime time, string fromTimeZone, string toTimeZone)
+        {
+            TimeZoneInfo fromZone = TimeZoneInfo.FindSystemTimeZoneById(fromTimeZone);
+            TimeZoneInfo toZone = TimeZoneInfo.FindSystemTimeZoneById(toTimeZone);
+            DateTime fromTime = DateTime.SpecifyKind(time, DateTimeKind.Unspecified);
+            DateTime fromTimeUtc = TimeZoneInfo.ConvertTimeToUtc(fromTime, fromZone);
+            DateTime toTime = TimeZoneInfo.ConvertTime(fromTimeUtc, toZone);
+            return toTime;
         }
 
         protected void MyClosedHandler(object sender, EventArgs e)
@@ -151,6 +179,15 @@ namespace BloxStreet_Trainer
             }
 
             TimeSpan timeDifference = closestTime.Value - now;
+
+            if (timeDifference.Minutes == 15 && timeDifference.Hours == 0 && timeDifference.Seconds == 0)
+            {
+                join.Visible = true;
+            }
+            else
+            {
+                join.Visible = false;
+            }
 
             seconds.Text = "in " + timeDifference.Seconds.ToString("00") + " seconds";
             minutes.Text = "in " + timeDifference.Minutes.ToString("00") + " minutes";
