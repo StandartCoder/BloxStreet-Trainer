@@ -1,6 +1,30 @@
-# BloxStreet Trainer Helper
+<!-- Logo -->
+<p align="center">
+  <a href="https://github.com/StandartCoder/BloxStreet-Trainer">
+    <img src="./Resources/logo.png" alt="Logo" width="100" height="100">
+  </a>
+</p>
 
-BloxStreet Trainer Helper is a tool designed to simplify and enhance the training process at BloxStreet Corporation. Instead of the old, tedious, and annoying method of copy-pasting, you can get the job done with just a few clicks.
+<!-- Title -->
+<h1 align="center">BloxStreet Trainer</h1>
+  <p align="center">
+    BloxStreet Trainer is a tool designed to simplify and enhance the training process at BloxStreet Corporation. Instead of the old, tedious, and annoying method of copy-pasting, you can get the job done with just a few clicks.
+    <br />
+    <br />
+    <a href="https://github.com/StandartCoder/BloxStreet-Trainer/issues/new">Report Bug</a>
+    ·
+    <a href="https://github.com/StandartCoder/BloxStreet-Trainer/issues/new">Request Feature</a>
+  </p>
+</h1>
+<br/><br/>
+
+<!-- Preview -->
+<p align="center">
+  <a href="">
+    <img src="./Resources/preview.png" width="100%"/>
+  </a>
+</p>
+<br/>
 
 ## Disclaimer
 
