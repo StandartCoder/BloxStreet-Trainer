@@ -3,6 +3,9 @@
 BloxStreet Trainer Helper is a tool designed to simplify and enhance the training process at BloxStreet Corporation. Instead of the old, tedious, and annoying method of copy-pasting, you can get the job done with just a few clicks.
 
 ## Disclaimer
+
+EDUCATIONAL PURPOSES ONLY!!!
+ 
 I acknowledge that the code for this tool is not of the highest quality. It was a small project I created for myself, and while it gets the job done, it is far from perfect. However, some people liked the idea and encouraged me to publish it. I could have done better, but I was too lazy to do so. Please note that this tool is still in beta and has a ton of bugs. If you find any bugs or have suggestions, please DM me on Discord or ping me in the Discord server.
 
 ## Table of Contents
