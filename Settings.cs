@@ -37,6 +37,7 @@ namespace BloxStreet_Trainer
             backbtn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, backbtn.Width, backbtn.Height, 20, 20));
             user.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, user.Width, user.Height, 20, 20));
             lines.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, lines.Width, lines.Height, 20, 20));
+            rpc.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, rpc.Width, rpc.Height, 20, 20));
         }
 
         [System.Runtime.InteropServices.DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -94,6 +95,7 @@ namespace BloxStreet_Trainer
             }
 
             Program.training = new Training();
+            Program.training.version.Text = "Version: " + Config.version;
 
             // do some stuff because changinmg rpc, maybe disabling it but already was disabled
             if (Config.getRPC() == false && rpc.Checked == true)

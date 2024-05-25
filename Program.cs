@@ -86,20 +86,6 @@ namespace BloxStreet_Trainer
 
             client = new DiscordRpcClient("1243720827179110462");
 
-            // Set the logger
-            client.Logger = new ConsoleLogger() { Level = LogLevel.Warning };
-
-            // Subscribe to events
-            client.OnReady += (sender, e) =>
-            {
-                Console.WriteLine($"Received Ready from user {e.User.Username}");
-            };
-
-            client.OnPresenceUpdate += (sender, e) =>
-            {
-                Console.WriteLine("Received Update! {0}", e.Presence);
-            };
-
             // Connect to the RPC
             client.Initialize();
 

@@ -175,7 +175,7 @@
             this.soon.Name = "soon";
             this.soon.Size = new System.Drawing.Size(201, 49);
             this.soon.TabIndex = 17;
-            this.soon.Text = "Coming Soon...";
+            this.soon.Text = "Custom (Soon)";
             this.soon.UseVisualStyleBackColor = false;
             // 
             // phase
@@ -256,7 +256,7 @@
             this.small.Name = "small";
             this.small.Size = new System.Drawing.Size(201, 49);
             this.small.TabIndex = 24;
-            this.small.Text = "Small Mode (Soon)";
+            this.small.Text = "Small Mode";
             this.small.UseVisualStyleBackColor = false;
             this.small.Click += new System.EventHandler(this.small_Click);
             // 

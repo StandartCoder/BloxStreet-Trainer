@@ -12,7 +12,7 @@ namespace BloxStreet_Trainer
 {
     internal class Config
     {
-        public static string version = "0.9.8";
+        public static string version = "0.9.9";
         public static string username = "";
         public static bool rpc = true;
 

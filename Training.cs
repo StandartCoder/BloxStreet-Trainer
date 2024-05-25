@@ -46,7 +46,6 @@ namespace BloxStreet_Trainer
             small.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, small.Width, small.Height, 20, 20));
 
             soon.Enabled = false;
-            small.Enabled = false;
 
             phase.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, phase.Width, phase.Height, 20, 20));
             left.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, left.Width, left.Height, 20, 20));
@@ -202,7 +201,8 @@ namespace BloxStreet_Trainer
 
             Small small = new Small();
             small.Show();
-            
+            small.version.Text = "Version: " + Config.version;
+
             small.Location = this.Location;
 
             this.Hide();
