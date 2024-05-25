@@ -64,7 +64,7 @@ To install and run the BloxStreet Trainer, follow these steps:
     ```
 
 ## Usage
-Once you have the BloxStreet Trainer Helper up and running, you can use it to streamline your training sessions. The tool provides a user-friendly interface to manage and execute training tasks with ease.
+Once you have the BloxStreet Trainer up and running, you can use it to streamline your training sessions. The tool provides a user-friendly interface to manage and execute training tasks with ease.
 
 ## Features
 - Simplified training process
@@ -100,10 +100,10 @@ For any inquiries, suggestions, or feedback, feel free to contact me on Discord.
 
 ## FAQ
 ### What does this program do?
-BloxStreet Trainer Helper is a tool designed to simplify the training process at BloxStreet Corporation by automating repetitive tasks. This tool allows you to manage training sessions with just a few clicks, reducing the need for manual copy-pasting.
+BloxStreet Trainer is a tool designed to simplify the training process at BloxStreet Corporation by automating repetitive tasks. This tool allows you to manage training sessions with just a few clicks, reducing the need for manual copy-pasting.
 
 ### How do I install the program?
-You can install the program by downloading the precompiled version from the [Releases](https://github.com/StandartCoder/BloxStreet-Trainer-Helper/releases) page or by building it from source following the [Installation](#installation) instructions.
+You can install the program by downloading the precompiled version from the [Releases](https://github.com/StandartCoder/BloxStreet-Trainer/releases/latest) page or by building it from source following the [Installation](#installation) instructions.
 
 ### What should I do if I encounter a bug or issue?
 Please report any bugs or issues by creating an issue on the GitHub repository. Alternatively, you can DM me on Discord or ping me in the Discord server for immediate assistance.
