@@ -21,7 +21,7 @@
 <!-- Preview -->
 <p align="center">
   <a href="">
-    <img src="./Resources/preview.png" width="100%"/>
+    <img src="./Resources/preview.png" width="65%" height="65%"/>
   </a>
 </p>
 <br/>
