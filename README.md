@@ -15,7 +15,7 @@ I acknowledge that the code for this tool is not of the highest quality. It was 
 - [FAQ](#faq)
 
 ## Installation
-To install and run the BloxStreet Trainer Helper, follow these steps:
+To install and run the BloxStreet Trainer, follow these steps:
 
 ### Using Precompiled Version
 1. Download the latest release from the [Releases](https://github.com/StandartCoder/BloxStreet-Trainer/releases/latest) page.
