@@ -40,6 +40,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lines = new System.Windows.Forms.Button();
             this.version = new System.Windows.Forms.Label();
+            this.rpc = new System.Windows.Forms.CheckBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -142,7 +144,7 @@
             this.lines.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lines.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lines.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lines.Location = new System.Drawing.Point(315, 312);
+            this.lines.Location = new System.Drawing.Point(315, 351);
             this.lines.Name = "lines";
             this.lines.Size = new System.Drawing.Size(161, 31);
             this.lines.TabIndex = 17;
@@ -162,11 +164,40 @@
             this.version.Text = "Version: 0.8.2";
             this.version.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // rpc
+            // 
+            this.rpc.AutoSize = true;
+            this.rpc.BackColor = System.Drawing.Color.DimGray;
+            this.rpc.Checked = true;
+            this.rpc.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.rpc.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rpc.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.rpc.Location = new System.Drawing.Point(414, 304);
+            this.rpc.Name = "rpc";
+            this.rpc.Size = new System.Drawing.Size(88, 29);
+            this.rpc.TabIndex = 19;
+            this.rpc.Text = "Enable";
+            this.rpc.UseVisualStyleBackColor = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(234, 296);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(174, 37);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Discord RPC:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.rpc);
             this.Controls.Add(this.version);
             this.Controls.Add(this.lines);
             this.Controls.Add(this.label1);
@@ -199,5 +230,7 @@
         private System.Windows.Forms.Button lines;
         public System.Windows.Forms.TextBox user;
         public System.Windows.Forms.Label version;
+        private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.CheckBox rpc;
     }
 }

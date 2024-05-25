@@ -73,6 +73,8 @@ namespace BloxStreet_Trainer
 
         private void timebtn_Click(object sender, EventArgs e)
         {
+            Program.changeRPCState("Time Table");
+
             Program.time.Show();
             Program.time.Location = this.Location;
             this.Hide();
@@ -80,11 +82,14 @@ namespace BloxStreet_Trainer
 
         protected void MyClosedHandler(object sender, EventArgs e)
         {
+            Program.closeRPC();
             Application.Exit();
         }
 
         private void threebtn_Click(object sender, EventArgs e)
         {
+            Program.changeRPCState("Three Lines");
+
             Program.three.Show();
             Program.three.Location = this.Location;
             this.Hide();
@@ -92,6 +97,8 @@ namespace BloxStreet_Trainer
 
         private void trainbtn_Click(object sender, EventArgs e)
         {
+            Program.changeRPCState("Training Guide");
+
             Program.training.Show();
             Program.training.Location = this.Location;
             this.Hide();
@@ -99,6 +106,8 @@ namespace BloxStreet_Trainer
 
         private void setbtn_Click(object sender, EventArgs e)
         {
+            Program.changeRPCState("Settings");
+
             Program.settings.Show();
             Program.settings.Location = this.Location;
             this.Hide();

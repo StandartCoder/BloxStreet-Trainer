@@ -95,6 +95,26 @@ namespace BloxStreet_Trainer
 
             Program.training = new Training();
 
+            // do some stuff because changinmg rpc, maybe disabling it but already was disabled
+            if (Config.getRPC() == false && rpc.Checked == true)
+            {
+                if (Program.client == null)
+                {
+                    Program.initRPC();
+                }
+
+                Config.changeRPC(true);
+            }
+            else if (Config.getRPC() == true && rpc.Checked == false)
+            {
+                if (Program.client != null)
+                {
+                    Program.closeRPC();
+                }
+
+                Config.changeRPC(false);
+            }
+
             Program.home.Show();
             Program.home.Location = this.Location;
             this.Hide();
@@ -102,6 +122,7 @@ namespace BloxStreet_Trainer
 
         protected void MyClosedHandler(object sender, EventArgs e)
         {
+            Program.closeRPC();
             Application.Exit();
         }
 

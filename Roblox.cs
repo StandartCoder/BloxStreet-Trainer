@@ -13,12 +13,6 @@ namespace BloxStreet_Trainer
         [DllImport("user32.dll")]
         private static extern int SetForegroundWindow(IntPtr point);
 
-        [DllImport("user32.dll")]
-        private static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
-
-        [DllImport("user32.dll")]
-        private static extern bool BringWindowToTop(IntPtr hWnd);
-
         [DllImport("user32.dll", SetLastError = true)]
         static extern uint MapVirtualKey(uint uCode, uint uMapType);
 
@@ -64,8 +58,6 @@ namespace BloxStreet_Trainer
             }
 
             IntPtr hWnd = robloxProcess.MainWindowHandle;
-            ShowWindow(hWnd, SW_RESTORE);
-            BringWindowToTop(hWnd);
             SetForegroundWindow(hWnd);
             Thread.Sleep(200); // Added delay to ensure the window is focused
         }

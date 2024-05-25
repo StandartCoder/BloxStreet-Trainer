@@ -12,11 +12,12 @@ namespace BloxStreet_Trainer
 {
     internal class Config
     {
-        public static string version = "0.9.7";
+        public static string version = "0.9.8";
         public static string username = "";
-        
+        public static bool rpc = true;
+
         // check if newst version is installed
-        
+
         public static void checkIfNewstVersion()
         {
             // do http request to get newst version
@@ -50,8 +51,7 @@ namespace BloxStreet_Trainer
                 System.IO.Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\BloxStreet");
                 System.IO.Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\BloxStreet\\lines");
 
-                // create config.ini with version and username
-                System.IO.File.WriteAllText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\BloxStreet\\config.ini", "version=" + version + "\nusername=" + username);
+                System.IO.File.WriteAllText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\BloxStreet\\config.ini", "version=" + version + "\nusername=" + username + "\nrpc=" + rpc);
 
                 // create lines files introduction
                 System.IO.File.WriteAllText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\BloxStreet\\lines\\introduction.txt", "");
@@ -95,6 +95,21 @@ namespace BloxStreet_Trainer
                 return false;
             }
 
+            return true;
+        }
+
+        public static bool changeRPC(bool newRPC)
+        {
+            try
+            {
+                string[] config = System.IO.File.ReadAllLines(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\BloxStreet\\config.ini");
+                config[2] = "rpc=" + newRPC.ToString();
+                System.IO.File.WriteAllLines(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\BloxStreet\\config.ini", config);
+            }
+            catch
+            {
+                return false;
+            }
 
             return true;
         }
@@ -103,6 +118,12 @@ namespace BloxStreet_Trainer
         {
             string[] config = System.IO.File.ReadAllLines(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\BloxStreet\\config.ini");
             return config[1].Split('=')[1];
+        }
+
+        public static bool getRPC()
+        {
+            string[] config = System.IO.File.ReadAllLines(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\BloxStreet\\config.ini");
+            return bool.Parse(config[2].Split('=')[1]);
         }
 
         public static List<string> getLines(string name)

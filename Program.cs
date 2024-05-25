@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DiscordRPC.Logging;
+using DiscordRPC;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -10,6 +12,9 @@ namespace BloxStreet_Trainer
 
     internal static class Program
     {
+        public static DiscordRpcClient client;
+        private static Timestamps since_open;
+
         public static Home home;
         public static Time time;
         public static Three three;
@@ -62,12 +67,91 @@ namespace BloxStreet_Trainer
             training.version.Text = "Version: " + Config.version;
             settings.version.Text = "Version: " + Config.version;
 
+            Config.rpc = Config.getRPC();
             Config.username = Config.getUsername();
             settings.user.Text = Config.username;
+            settings.rpc.Checked = Config.rpc;
+
+            if (Config.rpc)
+            {
+                initRPC();
+            }
 
             Application.Run(home);
         }
 
-        
+        public static void initRPC()
+        {
+            since_open = Timestamps.Now;
+
+            client = new DiscordRpcClient("1243720827179110462");
+
+            // Set the logger
+            client.Logger = new ConsoleLogger() { Level = LogLevel.Warning };
+
+            // Subscribe to events
+            client.OnReady += (sender, e) =>
+            {
+                Console.WriteLine($"Received Ready from user {e.User.Username}");
+            };
+
+            client.OnPresenceUpdate += (sender, e) =>
+            {
+                Console.WriteLine("Received Update! {0}", e.Presence);
+            };
+
+            // Connect to the RPC
+            client.Initialize();
+
+            // Set the rich presence
+            client.SetPresence(new RichPresence()
+            {
+                Details = "Main Menu",
+                //State = "Main Menu",
+                Timestamps = since_open,
+                Assets = new Assets()
+                {
+                    LargeImageKey = "logo",
+                    LargeImageText = "Coded by StandartCoder",
+                    SmallImageKey = "blox"
+                },
+                Buttons = new DiscordRPC.Button[]
+                {
+                    new DiscordRPC.Button() { Label = "Download Here", Url = "https://github.com/StandartCoder/BloxStreet-Trainer/releases/tag/latest"}
+                }
+            });
+        }
+
+        public static void changeRPCState(string state)
+        {
+            if (client == null)
+                return;
+
+            client.SetPresence(new RichPresence()
+            {
+                Details = state,
+                //State = state,
+                Timestamps = since_open,
+                Assets = new Assets()
+                {
+                    LargeImageKey = "logo",
+                    LargeImageText = "Coded by StandartCoder",
+                    SmallImageKey = "blox"
+                },
+                Buttons = new DiscordRPC.Button[]
+                {
+                    new DiscordRPC.Button() { Label = "Download Here", Url = "https://github.com/StandartCoder/BloxStreet-Trainer/releases/tag/latest"}
+                }
+            });
+        }
+
+        public static void closeRPC()
+        {
+            if (client == null)
+                return;
+
+            client.Dispose();
+            client = null;
+        }
     }
 }

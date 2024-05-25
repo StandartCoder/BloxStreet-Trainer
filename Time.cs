@@ -93,6 +93,8 @@ namespace BloxStreet_Trainer
 
         private void backbtn_Click(object sender, EventArgs e)
         {
+            Program.changeRPCState("Main Menu");
+
             Program.home.Show();
             Program.home.Location = this.Location;
             this.Hide();
@@ -146,6 +148,7 @@ namespace BloxStreet_Trainer
 
         protected void MyClosedHandler(object sender, EventArgs e)
         {
+            Program.closeRPC();
             Application.Exit();
         }
 

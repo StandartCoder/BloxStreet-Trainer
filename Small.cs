@@ -46,6 +46,7 @@ namespace BloxStreet_Trainer
 
         protected void MyClosedHandler(object sender, EventArgs e)
         {
+            Program.changeRPCState("Training Guide");
             Program.training.Show();
             this.Hide();
         }
