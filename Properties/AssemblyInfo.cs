@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die einer Assembly zugeordnet sind.
 [assembly: AssemblyTitle("BloxStreet Trainer")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("BloxStreet Trainer is a tool designed to simplify and enhance the training process at BloxStreet Corporation. Instead of the old, tedious, and annoying method of copy-pasting, you can get the job done with just a few clicks.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("StandartCoder")]
 [assembly: AssemblyProduct("BloxStreet Trainer")]
 [assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyTrademark("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Die folgende GUID bestimmt die ID der Typbibliothek, wenn dieses Projekt für COM verfügbar gemacht wird
-[assembly: Guid("c27dcc42-d844-4ae9-ad37-95ef2aa9298d")]
+[assembly: Guid("c27dcc42-d844-4ae9-ad37-95ef2aa9297f")]
 
 // Versionsinformationen für eine Assembly bestehen aus den folgenden vier Werten:
 //
