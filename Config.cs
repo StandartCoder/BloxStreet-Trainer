@@ -12,7 +12,7 @@ namespace BloxStreet_Trainer
 {
     internal class Config
     {
-        public static string version = "0.9.9";
+        public static string version = "1.0.0";
         public static string username = "";
         public static bool rpc = true;
 
@@ -58,6 +58,7 @@ namespace BloxStreet_Trainer
                 System.IO.File.WriteAllText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\BloxStreet\\lines\\cafe_test.txt", "");
                 System.IO.File.WriteAllText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\BloxStreet\\lines\\register_test.txt", "");
                 System.IO.File.WriteAllText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\BloxStreet\\lines\\passing_lrs.txt", "");
+                System.IO.File.WriteAllText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\BloxStreet\\lines\\custom.txt", "");
 
                 // fill files with standard lines in Data.cs
                 foreach (string line in Data.introduction_script)
