@@ -13,8 +13,8 @@ namespace BloxStreet_Trainer
         public static List<string> three_green_lines = new List<string>
         {
             "Greetings, everyone! Thank you for attending this training session. My name is {username}, and it is my pleasure to be your trainer.",
-            "While working at the cafe, you are responsible for taking the customer's order and ensuring its prompt fulfillment.",
-            "Congratulations, you have all passed the Cafe Test! Please sign out of your cafe registers by clicking the exit button."
+            "Before assisting a customer with their purchase, equip the Staff Card from your inventory and swipe it on the computer. You only need to do this once.",
+            "Once the Loyalty Card has been scanned, the computer will automatically detect the customer's items and display them on your screen."
         };
 
         public static List<string> introduction_script = new List<string>
@@ -51,12 +51,17 @@ namespace BloxStreet_Trainer
         {
             "Congratulations, you have all passed the Cafe Test! Please sign out of your cafe registers by clicking the exit button.",
             "Follow me so we can start the Register Test. When at the register, form a line facing the register from the cashier point.",
+            "We will now begin the Register Test.",
             "When a customer approaches your cash register, similar to the cafe, it is essential to greet them with a polite and friendly greeting.",
-            "When a customer requests to proceed with checkout, click on the \"Start Sale\" button on the register.",
-            "After selecting the customer's username, proceed to click on the \"Finalize Sale\" button.",
-            "Based on the guest's preference, click either \"Robux Payment\" or \"Card Payment\" to proceed with the payment process.",
-            "After that, proceed to click on the \"Finalize Sale\" button.",
-            "Afterward, kindly prompt the customer to scan their BloxStreet Cash Card on the payment screen. Once the payment is made, wish the guest an enjoyable rest of their day.",
+            "Before assisting a customer with their purchase, equip the Staff Card from your inventory and swipe it on the computer. You only need to do this once.",
+            "After confirming that you are signed into the computer, have the customer scan their Loyalty Card.",
+            "Once the Loyalty Card has been scanned, the computer will automatically detect the customer's items and display them on your screen.",
+            "Afterwards, click \"Finalize Transaction\" in the top right corner of the computer screen.",
+            "Next, ask the customer which payment method they would like to use for their purchase: their Cash Card or Robux.",
+            "Once the payment is made, the customer will receive their items. At this point, wish them an enjoyable rest of their day.",
+            "Note that if the customer wishes to void the transaction at any point, click on \"Void Transaction.\"",
+            "To log out of the register, click on \"Sign Out.\" You must always do this before moving to a different station within the store.",
+            "For this test, you will check me out by following the instructions I provided. Please note that I do not have any items with me, so no items will appear on the computer screen.",
             "Are all of you prepared to start the test? If you are, please jump to indicate your readiness.",
             "Hi, may I please check out my items?"
         };
