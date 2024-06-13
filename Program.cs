@@ -20,9 +20,7 @@ namespace BloxStreet_Trainer
         public static Three three;
         public static Training training;
         public static Settings settings;
-        /// <summary>
-        /// Der Haupteinstiegspunkt für die Anwendung.
-        /// </summary>
+
         [STAThread]
         static void Main()
         {
